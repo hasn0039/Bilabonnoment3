@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form style="align-content: center" th:action="@{/rediger/{lejeId}/}" method="post">
+
+    lejeId: <input type="text" name="lejeId" th:value="${lejeaftaler.lejeId}" readonly/>
+    <br>
+    navn: <input type="text" name="kundeNavn" th:value="${lejeaftaler.kundeNavn}"/>
+    <br>
+    kunde telefon: <input type="text" name="kundeTlf" th:value="${lejeaftaler.kundeTlf}"/>
+    <br>
+    kunde mail: <input type="text" name="kundeEmail" th:value="${lejeaftaler.kundeMail}">
+    <br>
+    kunde adresse: <input type="text" name="kundeAdresse" th:value="${lejeaftaler.kundeAdresse}">
+    <br>
+    bil id: <input type="number" name="bilId" th:value="${lejeaftaler.bilId}">
+    <br>
+    start dato: <input type="number" name="startDato" th:value="${lejeaftaler.startDato}">
+    <br>
+    slut dato: <input type="number" name="slutDato" th:value="${lejeaftaler.slutDato}">
+    <br>
+    afhentlokation <input type="text" name="afhentLokation" th:value="${lejeaftaler.afhentLokation}">
+    <br>
+    afleveringslokation <input type="text" name="afleveringsLokation" th:value="${lejeaftaler.afleveringsLokation}"/>
+<input type="submit" value="insert">
+
+
+</form>
+</body>
+</html>

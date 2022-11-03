@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/global.css">
+    <meta charset="UTF-8">
+    <title>lejeaftaler</title>
+</head>
+<body>
+<div><ul>
+    <li><a href="/forside">Forside</a></li>
+    <li><a href="/biler">Biler</a></li>
+    <li><a class="active" href="/lejeaftaler">Leje aftaler</a></li>
+    <li><a href="/skader">Skader</a></li>
+
+
+
+</ul></div>
+</div>
+<table>
+    <thead>
+    <tr>
+        <th>lejeId</th>
+        <th>Kunde Navn</th>
+        <th>Kunde Tlf</th>
+        <th>Kunde E-Mail</th>
+        <th>Kunde Adresse</th>
+        <th>BilId</th>
+        <th>Start dato</th>
+        <th>Slut dato</th>
+        <th>Afhentnings lokation</th>
+        <th>Afleverings lokation</th>
+    <th></th>
+    </thead>
+    <tbody>
+    <tr th:each="lejeaftale: ${lejeaftaler}">
+        <td th:text="${lejeaftale.lejeId}"></td>
+        <td th:text="${lejeaftale.kundeNavn}"></td>
+        <td th:text="${lejeaftale.kundeTlf}"></td>
+        <td th:text="${lejeaftale.kundeMail}"></td>
+        <td th:text="${lejeaftale.kundeAdresse}"></td>
+        <td th:text="${lejeaftale.bilId}"></td>
+        <td th:text="${lejeaftale.startDato}"></tdth:text></td>
+        <td th:text="${lejeaftale.slutDato}"></tdth:text></td>
+        <td th:text="${lejeaftale.afhentLokation}"></td>
+        <td th:text="${lejeaftale.afleveringsLokation}"></td>
+
+        <td><form th:action = "@{/slet/{id}(id=${lejeaftale.lejeId})}" th:object ="${lejeaftaler}">
+            <button type="submit" >delete</button></form>
+            </td>
+
+        <td><form th:action = "@{/rediger/{id}(id=${lejeaftale.lejeId})}" th:object ="${lejeaftaler}">
+            <button type="submit" >edit</button></form>
+        </td>
+
+    </tr>
+    </tbody>
+</table>
+
+<div>
+    <h1 style="text-align:left;">Opret</h1>
+    <a href="/opretlejeaftale">
+        <button class="btn btn-primary btn-lg">Opret lejeaftale</button>
+    </a>
+    </div>
+</body>
+</html>

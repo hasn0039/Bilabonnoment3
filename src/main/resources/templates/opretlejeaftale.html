@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div>
+    <h1 style="text-align:left;">Opret Lejeaftale</h1>
+    <a href="/lejeaftaler">
+        <button class="btn btn-primary btn-lg">Tilbage til lejeaftaler</button>
+    </a>
+</div>
+
+<form style="align-content: center" action="/opretlejeaftale" method="post">
+
+    lejeId: <input type="text" name="lejeId" value=""/><br>
+    <br>
+    navn: <input type="text" name="kundeNavn">
+    <br>
+    kunde telefon: <input type="text" name="kundeTlf">
+    <br>
+    kunde mail: <input type="text" name="kundeEmail">
+    <br>
+    kunde adresse: <input type="text" name="kundeAdresse">
+    <br>
+    bil id: <input type="number" name="bilId">
+    <br>
+    start dato: <input type="number" name="startDato">
+    <br>
+    slut dato: <input type="number" name="slutDato">
+    <br>
+    afhentlokation <input type="text" name="afhentLokation">
+    <br>
+    afleveringslokation <input type="text" name="afleveringsLokation">
+    <input type="submit" value="insert">
+</form>
+</body>
+</html>

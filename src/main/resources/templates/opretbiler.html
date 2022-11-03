@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div>
+  <h1 style="text-align:left;">Opret Bil</h1>
+  <a href="/lejeaftaler">
+    <button class="btn btn-primary btn-lg">Tilbage til biler</button>
+  </a>
+</div>
+
+<form style="align-content: center" action="/opretbiler" method="post">
+
+  bilId: <input type="text" name="bilId" value=""/>
+  <br>
+  mærke: <input type="text" name="mærke">
+  <br>
+  model: <input type="text" name="model">
+  <br>
+  årgang: <input type="text" name="årgang">
+  <br>
+  brændstof: <input type="text" name="brændstof">
+  <br>
+  pris: <input type="number" name="pris">
+  <input type="submit" value="insert">
+</form>
+</body>
+</html>

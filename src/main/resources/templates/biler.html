@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="stylesheet" href="/global.css">
+    <meta charset="UTF-8">
+    <title>biler</title>
+</head>
+<body>
+<div>
+    <ul>
+        <li><a href="/forside">Forside</a></li>
+        <li><a class="active" href="/biler">Biler</a></li>
+        <li><a href="/lejeaftaler">Leje aftaler</a></li>
+        <li><a href="/skader">Skader</a></li>
+
+    </ul>
+</div>
+<table>
+    <thead>
+    <tr>
+<th>bilId</th>
+<th>maerke</th>
+<th>pris</th>
+<th>model</th>
+<th>aargang</th>
+<th>braendstof</th>
+</thead>
+        <tbody>
+    </tr>
+    <tr th:each="bil: ${biler}">
+        <td th:text="${bil.bilId}"></td>
+        <td th:text="${bil.maerke}"></td>
+        <td th:text="${bil.model}"></td>
+        <td th:text="${bil.aargang}"></td>
+        <td th:text="${bil.braendstof}"></td>
+        <td th:text="${bil.pris}"></td>
+
+        <td><form th:action = "@{/sletbil/{id}(id=${bil.bilId})}" th:object ="${biler}">
+            <button type="submit" >delete</button></form>
+        </td>
+
+        <td><form th:action = "@{/redigerbil/{id}(id=${bil.bilId})}" th:object ="${biler}">
+            <button type="submit" >edit</button></form>
+        </td>
+
+    </tr>
+        </tbody>
+</table>
+
+<div>
+    <h1 style="text-align:left;">Opret</h1>
+    <a href="/opretbiler">
+        <button class="btn btn-primary btn-lg">Opret biler</button>
+    </a>
+</div>
+</body>
+</html>
